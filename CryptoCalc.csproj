@@ -37,6 +37,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Numerics" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -55,14 +56,100 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="AlgFrames\CongrFrame.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AlgFrames\DiophFrame.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AlgFrames\DiscrFrame.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AlgFrames\EAEFrame.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AlgFrames\EAFrame.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AlgFrames\EAGFrame.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AlgFrames\ElliptFrame.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AlgFrames\GKOFrame.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AlgFrames\InvFrame.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AlgFrames\LJFrame.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AlgFrames\ProbTestsFrame.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AlgFrames\QuadrFrame.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Compile Include="AlgFrames\CongrFrame.xaml.cs">
+      <DependentUpon>CongrFrame.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AlgFrames\DiophFrame.xaml.cs">
+      <DependentUpon>DiophFrame.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AlgFrames\DiscrFrame.xaml.cs">
+      <DependentUpon>DiscrFrame.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AlgFrames\EAEFrame.xaml.cs">
+      <DependentUpon>EAEFrame.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AlgFrames\EAFrame.xaml.cs">
+      <DependentUpon>EAFrame.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AlgFrames\EAGFrame.xaml.cs">
+      <DependentUpon>EAGFrame.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AlgFrames\ElliptFrame.xaml.cs">
+      <DependentUpon>ElliptFrame.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AlgFrames\GKOFrame.xaml.cs">
+      <DependentUpon>GKOFrame.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AlgFrames\InvFrame.xaml.cs">
+      <DependentUpon>InvFrame.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AlgFrames\LJFrame.xaml.cs">
+      <DependentUpon>LJFrame.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AlgFrames\ProbTestsFrame.xaml.cs">
+      <DependentUpon>ProbTestsFrame.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AlgFrames\QuadrFrame.xaml.cs">
+      <DependentUpon>QuadrFrame.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Algorithms.cs" />
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="PartGKO.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -129,5 +216,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

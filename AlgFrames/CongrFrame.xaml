@@ -1,0 +1,59 @@
+﻿<Page x:Class="CryptoCalc.AlgFrames.CongrFrame"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:CryptoCalc.AlgFrames"
+      mc:Ignorable="d" 
+      d:DesignHeight="400" d:DesignWidth="800"
+      Title="CongrFrame">
+
+    <Page.Resources>
+        <Style TargetType="Button" BasedOn="{StaticResource styleBtn}"/>
+    </Page.Resources>
+
+    <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+        <Button x:Name="btnToBaseAlgs" Content="🡠 Назад" Opacity="0.4" Width="100" 
+                HorizontalAlignment="Left" VerticalAlignment="Top" Click="BtnToBaseAlgs_Click"/>
+
+        <Grid Width="600" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            
+            <GroupBox Grid.Row="0" Header="Способ решения:" Foreground="White" FontFamily="Bahnschrift Condenced"
+                      HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="16">
+                <StackPanel Margin="0" Orientation="Horizontal">
+                    <RadioButton x:Name="rbCongr_RAE" Content="РАЕ" GroupName="swMod" IsChecked="True"/>
+                    <RadioButton x:Name="rbCongr_Pow" Content="Обратный элемент" GroupName="swMod"/>
+                </StackPanel>
+            </GroupBox>
+
+            <StackPanel Grid.Row="1" HorizontalAlignment="Center">
+                <TextBox x:Name="tbCongr_A" Text="" Width="120"/>
+                <Label Content="* x ≡"/>
+                <TextBox x:Name="tbCongr_B" Text="" Width="120"/>
+                <Label Content="( mod"/>
+                <TextBox x:Name="tbCongr_N" Text="" Width="120"/>
+                <Label Content=")"/>
+            </StackPanel>
+            
+            <Button x:Name="btnCongr_Solve" Grid.Row="2" Content="Решить" VerticalAlignment="Top" 
+                    Click="BtnCongr_Solve_Click"/>
+
+            <StackPanel Grid.Row="3" HorizontalAlignment="Center">
+                <Label Content="x1 = "/>
+                <TextBox x:Name="tbCongr_X1" Text="" IsReadOnly="True" BorderBrush="{x:Null}"/>
+            </StackPanel>
+
+            <StackPanel Grid.Row="4" HorizontalAlignment="Center">
+                <Label Content="x = "/>
+                <TextBox x:Name="tbCongr_X" Text="" IsReadOnly="True" BorderBrush="{x:Null}"/>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Page>

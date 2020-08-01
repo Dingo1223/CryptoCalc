@@ -10,10 +10,10 @@
 
     <Page.Resources>
         <Style TargetType="Button" BasedOn="{StaticResource styleBtn}">
-            <Setter Property="Control.FontSize" Value="16"/>
-            <Setter Property="Control.Height" Value="28"/>
-            <Setter Property="Control.Width" Value="360"/>
-            <Setter Property="Control.Margin" Value="0, 0, 4, 12"/>
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="Height" Value="28"/>
+            <Setter Property="Width" Value="360"/>
+            <Setter Property="Margin" Value="0, 0, 4, 12"/>
         </Style>
     </Page.Resources>
     
@@ -21,8 +21,8 @@
         <Button x:Name="btnToMainMenu" Content="🡠 Назад" Opacity="0.4" Width="100" 
                 HorizontalAlignment="Left" VerticalAlignment="Top" Click="BtnToMainMenu_Click"/>
 
-        <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalAlignment="Center" VerticalAlignment="Center">
-            <StackPanel>
+        <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalAlignment="Center">
+            <StackPanel Orientation="Vertical">
                 <Button x:Name="btnEA" Content="Алгоритм Евклида" Click="BtnEA_Click"/>
                 <Button x:Name="btnEAE" Content="Расширенный алгоритм Евклида" Click="BtnEAE_Click"/>
                 <Button x:Name="btnEAG" Content="Обобщённый алгоритм Евклида" Click="BtnEAG_Click"/>

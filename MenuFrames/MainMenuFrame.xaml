@@ -9,10 +9,12 @@
       Title="MainMenuFrame">
 
     <Page.Resources>
-        <Style TargetType="Button" BasedOn="{StaticResource styleBtn}"/>
+        <Style TargetType="Button" BasedOn="{StaticResource styleBtn}">
+            <Setter Property="Margin" Value="0, 0, 0, 12"/>
+        </Style>
     </Page.Resources>
     
-    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+    <StackPanel HorizontalAlignment="Center" Orientation="Vertical">
         <Button x:Name="btnBaseAlgorithms" Content="Базовые алгоритмы" Click="BtnBaseAlgorithms_Click"/>
         <Button x:Name="btnNaiveCiphers" Content="Наивные шифры" Click="BtnNaiveCiphers_Click"/>
         <Button x:Name="btnBoolFuncs" Content="Булевы функции" Click="BtnBoolFuncs_Click"/>
