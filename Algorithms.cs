@@ -275,7 +275,7 @@ namespace CryptoCalc
             while (i != (d + 1))
             {
                 x = ((u * nu + i * n) / d) % n;
-                if (((BigInteger)Math.Pow((int)g, (int)x) - a) % m == 0) return x;
+                if ((Math.Pow((long)g, (long)x) - (long)a) % (long)m == 0) return x;
                 i++;
             }
             return x;
