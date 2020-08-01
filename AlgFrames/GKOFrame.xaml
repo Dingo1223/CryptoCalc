@@ -51,11 +51,11 @@
                     Click="BtnGKO_Solve_Click"/>
             
             <Label Grid.Row="2" Grid.Column="1" Content="x1 =" VerticalAlignment="Top"/>
-            <TextBox x:Name="tbGKO_X1" Margin="64, 0, 0, 0" Grid.Row="2" Grid.Column="1" Text=""
+            <TextBox x:Name="tbGKO_X1" Margin="64, 4, 0, 0" Grid.Row="2" Grid.Column="1" Text=""
                      IsReadOnly="True" BorderBrush="{x:Null}" VerticalAlignment="Top"/>
             
             <Label Margin="0, 52, 0, 0" Grid.Row="2" Grid.Column="1" Content="x =" VerticalAlignment="Top"/>
-            <TextBox x:Name="tbGKO_X" Margin="64, 52, 0, 0" Grid.Row="2" Grid.Column="1" Text=""
+            <TextBox x:Name="tbGKO_X" Margin="64, 56, 0, 0" Grid.Row="2" Grid.Column="1" Text=""
                      IsReadOnly="True" BorderBrush="{x:Null}" VerticalAlignment="Top"/>
         </Grid>
     </Grid>

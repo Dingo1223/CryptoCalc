@@ -149,6 +149,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="GKO_X.cs" />
     <Compile Include="PartGKO.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -191,6 +192,7 @@
     <Compile Include="MenuFrames\OtherFrame.xaml.cs">
       <DependentUpon>OtherFrame.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ProbTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>

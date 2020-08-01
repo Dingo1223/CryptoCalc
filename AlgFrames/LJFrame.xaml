@@ -21,7 +21,7 @@
             <Line Margin="0, 44" Stroke="White" X1="0" Y1="0" X2="120" Y2="0"/>
             <TextBox x:Name="tbLJ_B" Margin="0, 48, 0, 0" Text="" Width="120" VerticalAlignment="Top"/>
             <Label Margin="120, 20, 0, 0" Content="=" VerticalAlignment="Top"/>
-            <TextBox x:Name="tbLJ_Res" Margin="144, 20, 0, 0" Text="" IsReadOnly="True" BorderBrush="{x:Null}"  VerticalAlignment="Top"/>
+            <TextBox x:Name="tbLJ_Res" Margin="144, 24, 0, 0" Text="" IsReadOnly="True" BorderBrush="{x:Null}"  VerticalAlignment="Top"/>
             
             <Button x:Name="btnLJ_Solve" Margin="0, 120, 0, 0" Content="Найти" Width="140"
                     Click="BtnLJ_Solve_Click"/>

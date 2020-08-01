@@ -19,7 +19,10 @@ namespace CryptoCalc.AlgFrames
 
         private void BtnEAG_Solve_Click(object sender, RoutedEventArgs e)
         {
-
+            if (As.Count != 0)
+            {
+                tbEAG_Res.Text = Algorithms.Euclid_Gen(As).ToString();
+            }
         }
 
         private void BtnEAG_Add_Click(object sender, RoutedEventArgs e)
@@ -28,6 +31,7 @@ namespace CryptoCalc.AlgFrames
             {
                 lbEAG.Items.Add(tbEAG_New.Text);
                 As.Add(a);
+                tbEAG_New.Text = "";
             }
             else MessageBox.Show("Неверные входные данные");
         }

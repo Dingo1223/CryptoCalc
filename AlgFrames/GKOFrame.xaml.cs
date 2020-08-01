@@ -25,6 +25,9 @@ namespace CryptoCalc.AlgFrames
             {
                 lbGKO.Items.Add(tbGKO_A.Text + " * x ≡ " + tbGKO_B.Text + " ( mod " + tbGKO_N.Text + ")");
                 PartsGKO.Add(new PartGKO(a, b, n));
+                tbGKO_A.Text = "";
+                tbGKO_B.Text = "";
+                tbGKO_N.Text = "";
             }
             else MessageBox.Show("Неверные входные данные");
         }
@@ -37,7 +40,9 @@ namespace CryptoCalc.AlgFrames
 
         private void BtnGKO_Solve_Click(object sender, RoutedEventArgs e)
         {
-
+            GKO_X x = Algorithms.GKO(PartsGKO);
+            tbGKO_X1.Text = x.A.ToString();
+            tbGKO_X.Text = x.A.ToString() + " + " + x.N.ToString() + " * t";
         }
     }
 }

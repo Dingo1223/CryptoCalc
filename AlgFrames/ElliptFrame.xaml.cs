@@ -1,4 +1,5 @@
 ﻿using CryptoCalc.MenuFrames;
+using System.Numerics;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -15,7 +16,13 @@ namespace CryptoCalc.AlgFrames
 
         private void BtnStart_Click(object sender, RoutedEventArgs e)
         {
-
+            if (BigInteger.TryParse(tbA.Text, out BigInteger a) &&
+                BigInteger.TryParse(tbB.Text, out BigInteger b) &&
+                BigInteger.TryParse(tbP.Text, out BigInteger p))
+            {
+                tbRes.Text = Algorithms.EC_Ord(a, b, p).ToString();
+            }
+            else MessageBox.Show("Неверные входные данные");
         }
     }
 }

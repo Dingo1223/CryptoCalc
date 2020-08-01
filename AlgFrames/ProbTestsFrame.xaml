@@ -16,6 +16,15 @@
             <Setter Property="Margin" Value="0, 0, 8, 0"/>
             <Setter Property="Content" Value="⟳"/>
         </Style>
+        
+        <Style TargetType="Label">
+            <Setter Property="FontFamily" Value="Bahnschrift Condenced"/>
+            <Setter Property="FontSize" Value="28"/>
+            <Setter Property="Background" Value="{x:Null}"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
     </Page.Resources>
 
     <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
@@ -36,7 +45,7 @@
                      HorizontalAlignment="Stretch" VerticalAlignment="Center"/>
 
             <Label Grid.Row="2" Content="Число повторений теста:"/>
-            <TextBox x:Name="tbRepeats" Margin="380, 0, 0, 0" Grid.Row="2" Text="15" Width="80" VerticalAlignment="Center"/>
+            <TextBox x:Name="tbRepeats" Margin="340, 0, 0, 0" Grid.Row="2" Text="15" Width="80" VerticalAlignment="Center"/>
 
             <StackPanel Grid.Row="3">
                 <Button x:Name="btnFermat" Click="BtnFermat_Click"/>
