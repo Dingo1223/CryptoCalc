@@ -22,8 +22,7 @@
                 <RowDefinition/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-            <GroupBox Header="Способ решения:" Grid.Row="0" Foreground="White" FontFamily="Bahnschrift Condenced"
-                      HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="16">
+            <GroupBox Header="Способ решения:" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Top">
                 <StackPanel Margin="0">
                     <RadioButton x:Name="rbInv_RAE" Content="РАЕ" GroupName="sw" IsChecked="True"/>
                     <RadioButton x:Name="rbInv_Pow" Content="Возведение в степень" GroupName="sw"/>

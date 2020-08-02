@@ -1,0 +1,80 @@
+﻿<Page x:Class="CryptoCalc.CiphersFrames.CaesarFrame"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:CryptoCalc.CiphersFrames"
+      mc:Ignorable="d" 
+      d:DesignHeight="420" d:DesignWidth="800"
+      Title="CaesarFrame">
+
+    <Page.Resources>
+        <Style TargetType="Button" BasedOn="{StaticResource styleBtn}"/>
+    </Page.Resources>
+
+    <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+        <Button x:Name="btnToNaiveCiphers" Content="🡠 Назад" Opacity="0.4" Width="100" Height="28"
+                HorizontalAlignment="Left" VerticalAlignment="Top" Click="BtnToNaiveCiphers_Click"/>
+
+        <Grid Margin="4, 32, 4, 20" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="48"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <GroupBox Grid.Row="0" Header="Выберите язык" HorizontalAlignment="Left">
+                <StackPanel Margin="0">
+                    <RadioButton x:Name="rbRu" Content="Русский" GroupName="rb" IsChecked="True"/>
+                    <RadioButton x:Name="rbEn" Content="Английский" GroupName="rb"/>
+                </StackPanel>
+            </GroupBox>
+
+            <GroupBox Grid.Row="0" Header="Тип шифрования" HorizontalAlignment="Right">
+                <StackPanel Margin="0">
+                    <RadioButton x:Name="rbRandom" Content="По случайному ключу" GroupName="rbC" Checked="RbRandom_Checked"/>
+                    <RadioButton x:Name="rbKey" GroupName="rbC" Checked="RbKey_Checked">
+                        <StackPanel Margin="0">
+                            <TextBlock Text="По ключу "/>
+                            <TextBox x:Name="tbKey" Text="" FontSize="20" Width="40"/>
+                        </StackPanel>
+                    </RadioButton>
+                </StackPanel>
+            </GroupBox>
+
+            <TabControl Grid.Row="1" Background="{x:Null}">
+                <TabItem Header="Шифрование">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition Height="32"/>
+                        </Grid.RowDefinitions>
+
+                        <TextBox x:Name="tbEnc" Grid.Row="0" Text="" FontSize="20" TextWrapping="Wrap" AcceptsReturn="True"
+                                 HorizontalAlignment="Stretch" VerticalAlignment="Stretch" HorizontalContentAlignment="Left"/>
+                        <Button x:Name="btnEnc" Grid.Row="1" Content="Зашифровать" Height="28" Click="BtnEnc_Click"/>
+                    </Grid>
+                </TabItem>
+
+                <TabItem Header="Дешифрование">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition Height="32"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+
+                        <TextBox x:Name="tbDec" Grid.Row="0" Text="" FontSize="20" TextWrapping="Wrap" AcceptsReturn="True"
+                                 HorizontalAlignment="Stretch" VerticalAlignment="Stretch" HorizontalContentAlignment="Left"/>
+                        <Button x:Name="btnDec" Grid.Row="1" Content="Расшифровать" Height="28" 
+                                Click="BtnDec_Click"/>
+
+                        <ListBox x:Name="lbVariants" Grid.Column="1" Background="{x:Null}" Visibility="Hidden"/>
+                    </Grid>
+                </TabItem>
+            </TabControl>
+        </Grid>
+    </Grid>
+</Page>

@@ -25,8 +25,7 @@
                 <RowDefinition/>
             </Grid.RowDefinitions>
             
-            <GroupBox Grid.Row="0" Header="Способ решения:" Foreground="White" FontFamily="Bahnschrift Condenced"
-                      HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="16">
+            <GroupBox Grid.Row="0" Header="Способ решения:" HorizontalAlignment="Center" VerticalAlignment="Top">
                 <StackPanel Margin="0" Orientation="Horizontal">
                     <RadioButton x:Name="rbCongr_RAE" Content="РАЕ" GroupName="swMod" IsChecked="True"/>
                     <RadioButton x:Name="rbCongr_Pow" Content="Обратный элемент" GroupName="swMod"/>
