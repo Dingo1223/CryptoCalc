@@ -17,9 +17,6 @@ namespace CryptoCalc.MenuFrames
 
         private void BtnTranspos_Click(object sender, RoutedEventArgs e) => MainWindow.MainFrame.Content = new TransposFrame();
 
-        private void BtnVigenere_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
+        private void BtnVigenere_Click(object sender, RoutedEventArgs e) => MainWindow.MainFrame.Content = new VigenereFrame();
     }
 }

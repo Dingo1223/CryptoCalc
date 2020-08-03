@@ -1,4 +1,4 @@
-﻿<Page x:Class="CryptoCalc.CiphersFrames.TransposFrame"
+﻿<Page x:Class="CryptoCalc.CiphersFrames.VigenereFrame"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:CryptoCalc.CiphersFrames"
       mc:Ignorable="d" 
       d:DesignHeight="500" d:DesignWidth="800"
-      Title="TransposFrame">
+      Title="VigenereFrame">
 
     <Page.Resources>
         <Style TargetType="Button" BasedOn="{StaticResource styleBtn}">
@@ -33,9 +33,6 @@
                     <RadioButton x:Name="rbEn" Content="Английский" GroupName="rb" Checked="RbLang_Checked"/>
                 </StackPanel>
             </GroupBox>
-
-            <Button x:Name="btnGenerateKey" Grid.Row="0" Content="Сгенерировать ключи" HorizontalAlignment="Right"
-                    Click="BtnGenerateKey_Click"/>
 
             <TabControl Grid.Row="1" Background="{x:Null}" BorderBrush="SteelBlue">
                 <TabItem Header="Шифрование">
@@ -72,9 +69,11 @@
                     <Grid>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="32"/>
+                            <RowDefinition Height="32"/>
                             <RowDefinition/>
                             <RowDefinition Height="32"/>
-                            <RowDefinition Height="0.7*"/>
+                            <RowDefinition Height="32"/>
+                            <RowDefinition Height="100"/>
                         </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition/>
@@ -84,41 +83,33 @@
 
                         <Label Content="Текст:" FontSize="20"/>
                         <Button x:Name="btnAnalyze" Content="Анализировать" HorizontalAlignment="Right" Click="BtnAnalyze_Click"/>
-
-                        <TextBox x:Name="tbDecNoKey" Grid.Row="1" Grid.Column="0" Text=""/>
-                        <StackPanel Grid.Row="2" Grid.Column="0" Margin="0">
-                            <Label Margin="0, 0, 28, 0" Content="Подбор букв:" FontSize="20"/>
-                            <TextBox x:Name="tbFrom" Text="" Width="40" VerticalAlignment="Center"/>
-                            <Label Content="-->" FontSize="20"/>
-                            <TextBox x:Name="tbTo" Text="" Width="40" VerticalAlignment="Center"/>
-                            <Button x:Name="btnApply" Margin="20, 0" Content="Применить" Width="120" Click="BtnApply_Click"/>
+                        <TextBox x:Name="tbDecNoKey" Grid.Row="1" Grid.RowSpan="2" Grid.Column="0" Text=""/>
+                        
+                        <StackPanel Grid.Row="3" Grid.Column="0" Margin="0">
+                            <Label Content="Возможные длины ключа:" FontSize="20"/>
+                            <TextBox x:Name="tbLengths" Text="" Width="288" VerticalAlignment="Center" IsReadOnly="True"/>
                         </StackPanel>
 
-                        <Grid Grid.Row="3" HorizontalAlignment="Left">
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="32"/>
-                                <RowDefinition/>
-                            </Grid.RowDefinitions>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="160"/>
-                                <ColumnDefinition Width="200"/>
-                                <ColumnDefinition/>
-                            </Grid.ColumnDefinitions>
+                        <StackPanel Grid.Row="4" Grid.Column="0" Margin="0">
+                            <Label Content="Выбранная длина:" FontSize="20"/>
+                            <TextBox x:Name="tbSelectedLength" Text="" Width="40" VerticalAlignment="Center"/>
+                            <Button x:Name="btnApply" Margin="20, 0" Content="Применить" Width="120" Click="BtnApply_Click"/>
+                            <Button x:Name="btnClear" Content="Заново" Width="120" Click="BtnClear_Click"/>
+                        </StackPanel>
 
-                            <Label Grid.Row="0" Grid.Column="0" Content="История замен:" FontSize="20"/>
-                            <Label Grid.Row="1" Grid.Column="0" Content="Замен:" FontSize="20"/>
-                            <Label x:Name="lbCount" Grid.Row="1" Grid.Column="0" Margin="68, 0, 0, 0" Content="0" FontSize="20"/>
+                        <Label Grid.Row="5" Grid.Column="0" Content="Предполагаемый ключ:" FontSize="20"
+                               VerticalAlignment="Top"/>
+                        <StackPanel x:Name="spKey" Grid.Row="5" Grid.Column="0" Margin="0, 28, 0, 0"
+                                    VerticalAlignment="Stretch"/>
 
-                            <ListBox x:Name="lbChanges" Grid.RowSpan="2" Grid.Column="1" Background="{x:Null}"/>
-                            <Button x:Name="btnCancelLast" Grid.Row="0" Grid.Column="3" Content="Отменить последнее"
-                                    Width="180" Click="BtnCancelLast_Click"/>
-                            <Button x:Name="btnCancelSelected" Grid.Row="1" Grid.Column="3" Content="Отменить выбранное"
-                                    VerticalAlignment="Top" Width="180" Click="BtnCancelSelected_Click"/>
-                        </Grid>
-                        
                         <Label Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" Content="Таблицы частот:" FontSize="20"/>
-                        <ListBox x:Name="lbFreqStd" Margin="4" Grid.Row="1" Grid.RowSpan="3" Grid.Column="1" Opacity="0.6"/>
-                        <ListBox x:Name="lbFreqText" Margin="4" Grid.Row="1" Grid.RowSpan="3" Grid.Column="2" Opacity="0.6"/>
+                        <Label Grid.Row="1" Grid.Column="1" Content="Позиция:" FontSize="20"/>
+                        <ComboBox x:Name="cbxPosition" Grid.Row="1" Grid.Column="2" Opacity="0.5"
+                                  FontSize="20" FontFamily="Bahnschrift Condenced" 
+                                  SelectionChanged="CbxPosition_SelectionChanged"/>
+                        <ListBox x:Name="lbFreqStd" Margin="4" Grid.Row="2" Grid.RowSpan="4" Grid.Column="1" Opacity="0.6"/>
+                        <ListBox x:Name="lbFreqText" Margin="4" Grid.Row="2" Grid.RowSpan="4" Grid.Column="2" Opacity="0.6"
+                                 MouseDoubleClick="LbFreqText_MouseDoubleClick"/>
                     </Grid>
                 </TabItem>
             </TabControl>

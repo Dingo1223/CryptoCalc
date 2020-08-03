@@ -42,6 +42,7 @@ namespace CryptoCalc.CiphersFrames
 
         private void BtnAnalyze_Click(object sender, RoutedEventArgs e)
         {
+            lbFreqText.Items.Clear();
             string text = tbDecNoKey.Text;
             Dictionary<char, double> freqText = Transpos.GetTextFreq(ref text, rbEn.IsChecked == true);
             foreach (KeyValuePair<char, double> item in freqText)
