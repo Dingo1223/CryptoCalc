@@ -56,6 +56,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Transpos.cs" />
     <Page Include="AlgFrames\CongrFrame.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -108,6 +109,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="CiphersFrames\TransposFrame.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -156,6 +161,9 @@
     <Compile Include="Caesar.cs" />
     <Compile Include="CiphersFrames\CaesarFrame.xaml.cs">
       <DependentUpon>CaesarFrame.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CiphersFrames\TransposFrame.xaml.cs">
+      <DependentUpon>TransposFrame.xaml</DependentUpon>
     </Compile>
     <Compile Include="GKO_X.cs" />
     <Compile Include="PartGKO.cs" />

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CryptoCalc"
         mc:Ignorable="d"
-        Title="CryptoCalc" Height="420" Width="800" MinHeight="420" MinWidth="800" 
+        Title="CryptoCalc" Height="520" Width="800" MinHeight="520" MinWidth="800" 
         WindowStartupLocation="CenterScreen">
 
     <Grid>

@@ -4,6 +4,20 @@
              xmlns:local="clr-namespace:CryptoCalc"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
+        <!--Cipher TextBoxs-->
+        <Style x:Key="styleTBCiphers" TargetType="TextBox">
+            <Setter Property="FontFamily" Value="Bahnschrift Condenced"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="Background" Value="{x:Null}"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="HorizontalContentAlignment" Value="Left"/>
+            <Setter Property="HorizontalAlignment" Value="Stretch"/>
+            <Setter Property="VerticalAlignment" Value="Stretch"/>
+            <Setter Property="BorderBrush" Value="SteelBlue"/>
+            <Setter Property="TextWrapping" Value="Wrap"/>
+            <Setter Property="AcceptsReturn" Value="True"/>
+        </Style>
+        
         <!--TabItems-->
         <Style TargetType="TabItem">
             <Setter Property="Foreground" Value="White"/>
@@ -94,7 +108,7 @@
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
-            
+
             <Style.Triggers>
                 <Trigger Property="IsMouseOver" Value="True">
                     <Setter Property="Template">
@@ -126,7 +140,5 @@
                 </Trigger>
             </Style.Triggers>
         </Style>
-        
-        
     </Application.Resources>
 </Application>

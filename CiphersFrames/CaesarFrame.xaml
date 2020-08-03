@@ -5,15 +5,18 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:CryptoCalc.CiphersFrames"
       mc:Ignorable="d" 
-      d:DesignHeight="420" d:DesignWidth="800"
+      d:DesignHeight="500" d:DesignWidth="800"
       Title="CaesarFrame">
 
     <Page.Resources>
-        <Style TargetType="Button" BasedOn="{StaticResource styleBtn}"/>
+        <Style TargetType="Button" BasedOn="{StaticResource styleBtn}">
+            <Setter Property="Height" Value="28"/>
+        </Style>
+        <Style TargetType="TextBox" BasedOn="{StaticResource styleTBCiphers}"/>
     </Page.Resources>
 
     <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-        <Button x:Name="btnToNaiveCiphers" Content="🡠 Назад" Opacity="0.4" Width="100" Height="28"
+        <Button x:Name="btnToNaiveCiphers" Content="🡠 Назад" Opacity="0.4" Width="100"
                 HorizontalAlignment="Left" VerticalAlignment="Top" Click="BtnToNaiveCiphers_Click"/>
 
         <Grid Margin="4, 32, 4, 20" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
@@ -35,13 +38,13 @@
                     <RadioButton x:Name="rbKey" GroupName="rbC" Checked="RbKey_Checked">
                         <StackPanel Margin="0">
                             <TextBlock Text="По ключу "/>
-                            <TextBox x:Name="tbKey" Text="" FontSize="20" Width="40"/>
+                            <TextBox x:Name="tbKey" Text="" Width="40"/>
                         </StackPanel>
                     </RadioButton>
                 </StackPanel>
             </GroupBox>
 
-            <TabControl Grid.Row="1" Background="{x:Null}">
+            <TabControl Grid.Row="1" Background="{x:Null}" BorderBrush="SteelBlue">
                 <TabItem Header="Шифрование">
                     <Grid>
                         <Grid.RowDefinitions>
@@ -49,9 +52,8 @@
                             <RowDefinition Height="32"/>
                         </Grid.RowDefinitions>
 
-                        <TextBox x:Name="tbEnc" Grid.Row="0" Text="" FontSize="20" TextWrapping="Wrap" AcceptsReturn="True"
-                                 HorizontalAlignment="Stretch" VerticalAlignment="Stretch" HorizontalContentAlignment="Left"/>
-                        <Button x:Name="btnEnc" Grid.Row="1" Content="Зашифровать" Height="28" Click="BtnEnc_Click"/>
+                        <TextBox x:Name="tbEnc" Grid.Row="0" Text=""/>
+                        <Button x:Name="btnEnc" Grid.Row="1" Content="Зашифровать" Click="BtnEnc_Click"/>
                     </Grid>
                 </TabItem>
 
@@ -66,10 +68,8 @@
                             <ColumnDefinition/>
                         </Grid.ColumnDefinitions>
 
-                        <TextBox x:Name="tbDec" Grid.Row="0" Text="" FontSize="20" TextWrapping="Wrap" AcceptsReturn="True"
-                                 HorizontalAlignment="Stretch" VerticalAlignment="Stretch" HorizontalContentAlignment="Left"/>
-                        <Button x:Name="btnDec" Grid.Row="1" Content="Расшифровать" Height="28" 
-                                Click="BtnDec_Click"/>
+                        <TextBox x:Name="tbDec" Grid.Row="0" Text="" />
+                        <Button x:Name="btnDec" Grid.Row="1" Content="Расшифровать" Click="BtnDec_Click"/>
 
                         <ListBox x:Name="lbVariants" Grid.Column="1" Background="{x:Null}" Visibility="Hidden"/>
                     </Grid>
