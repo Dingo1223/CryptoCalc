@@ -56,6 +56,13 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="BoolFrames\BoolFuncFrame.xaml.cs">
+      <DependentUpon>BoolFuncFrame.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BoolFrames\BoolGenerateFrame.xaml.cs">
+      <DependentUpon>BoolGenerateFrame.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BoolFuncs.cs" />
     <Compile Include="CiphersFrames\VigenereFrame.xaml.cs">
       <DependentUpon>VigenereFrame.xaml</DependentUpon>
     </Compile>
@@ -107,6 +114,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="AlgFrames\QuadrFrame.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="BoolFrames\BoolFuncFrame.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="BoolFrames\BoolGenerateFrame.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

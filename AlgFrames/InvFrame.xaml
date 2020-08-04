@@ -10,6 +10,7 @@
 
     <Page.Resources>
         <Style TargetType="Button" BasedOn="{StaticResource styleBtn}"/>
+        <Style TargetType="Label" BasedOn="{StaticResource styleLb}"/>
     </Page.Resources>
 
     <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">

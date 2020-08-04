@@ -1,0 +1,65 @@
+﻿<Page x:Class="CryptoCalc.BoolFrames.BoolGenerateFrame"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:CryptoCalc.BoolFrames"
+      mc:Ignorable="d" 
+      d:DesignHeight="500" d:DesignWidth="800"
+      Title="BoolGenerateFrame">
+
+    <Page.Resources>
+        <Style TargetType="Button" BasedOn="{StaticResource styleBtn}"/>
+        <Style TargetType="TextBox" BasedOn="{StaticResource styleTbSmall}"/>
+    </Page.Resources>
+
+    <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+        <Button x:Name="btnToBaseAlgs" Content="🡠 Назад" Opacity="0.4" Width="100" 
+                HorizontalAlignment="Left" VerticalAlignment="Top" Click="BtnToBaseAlgs_Click"/>
+
+        <Grid Width="780" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition Height="32"/>
+                <RowDefinition Height="32"/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition Height="52"/>
+                <RowDefinition/>
+                <RowDefinition Height="52"/>
+                <RowDefinition Height="52"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <Label Grid.Row="0" Content="Укажите требуемые характеристики булевой функции:"/>
+
+            <StackPanel Grid.Row="1" Margin="0">
+                <Label Content="Число переменных: 2 *"/>
+                <TextBox x:Name="tbK" Text="" Width="60" VerticalAlignment="Center" HorizontalContentAlignment="Center"/>
+            </StackPanel>
+
+            <StackPanel Grid.Row="2" Margin="0">
+                <Label Content="Мин. значение нелинейности: "/>
+                <TextBox x:Name="tbNonLin" Text="" Width="60" VerticalAlignment="Center" HorizontalContentAlignment="Center"/>
+            </StackPanel>
+
+            <Button x:Name="btnGenerate" Grid.Row="3" Content="Сгенерировать" Click="BtnGenerate_Click"/>
+
+            <Label Grid.Row="4" Content="Полученный вектор:"/>
+            <TextBox x:Name="tbVect" Grid.Row="5" Text="" IsReadOnly="True" BorderBrush="{x:Null}" VerticalContentAlignment="Center"/>
+
+            <Label Grid.Row="6" Content="АНФ:"/>
+            <TextBox x:Name="tbANF" Grid.Row="7" Text="" IsReadOnly="True" BorderBrush="{x:Null}" VerticalContentAlignment="Center"/>
+
+            <StackPanel Grid.Row="8" HorizontalAlignment="Center" Margin="0">
+                <Label Content="Степень: "/>
+                <Label x:Name="lbDeg" Content="?" Width="40"/>
+                <Label Content=" Нелинейность: "/>
+                <Label x:Name="lbNonLin" Content="?" Width="40"/>
+            </StackPanel>
+
+            <ProgressBar x:Name="pb" Grid.Row="9" Background="{x:Null}" Height="12" Foreground="SteelBlue" 
+                         IsIndeterminate="True" Visibility="Hidden"/>
+        </Grid>
+    </Grid>
+</Page>

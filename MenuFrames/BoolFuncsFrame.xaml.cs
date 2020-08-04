@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using CryptoCalc.BoolFrames;
+using System.Windows;
 using System.Windows.Controls;
 
 namespace CryptoCalc.MenuFrames
@@ -12,14 +13,8 @@ namespace CryptoCalc.MenuFrames
 
         private void BtnToMainMenu_Click(object sender, RoutedEventArgs e) => MainWindow.MainFrame.Content = new MainMenuFrame();
 
-        private void BtnBoolFunc_Click(object sender, RoutedEventArgs e)
-        {
+        private void BtnBoolFunc_Click(object sender, RoutedEventArgs e) => MainWindow.MainFrame.Content = new BoolFuncFrame();
 
-        }
-
-        private void BtnBoolGenerate_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
+        private void BtnBoolGenerate_Click(object sender, RoutedEventArgs e) => MainWindow.MainFrame.Content = new BoolGenerateFrame();
     }
 }

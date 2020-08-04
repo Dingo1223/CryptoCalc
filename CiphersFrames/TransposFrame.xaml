@@ -14,7 +14,7 @@
             <Setter Property="Width" Value="200"/>
             <Setter Property="FontSize" Value="16"/>
         </Style>
-        <Style TargetType="TextBox" BasedOn="{StaticResource styleTBCiphers}"/>
+        <Style TargetType="TextBox" BasedOn="{StaticResource styleTbSmall}"/>
     </Page.Resources>
 
     <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
@@ -46,7 +46,7 @@
                             <RowDefinition Height="32"/>
                         </Grid.RowDefinitions>
 
-                        <Label Grid.Row="0" Content="Ключ:" FontSize="20"/>
+                        <Label Grid.Row="0" Content="Ключ:"/>
                         <TextBox x:Name="tbEncKey" Grid.Row="0" Margin="68, 0" Text="" VerticalAlignment="Center"/>
                         <TextBox x:Name="tbEnc" Grid.Row="1" Text=""/>
                         <Button x:Name="btnEnc" Grid.Row="2" Content="Зашифровать" Click="BtnEnc_Click"/>
@@ -61,7 +61,7 @@
                             <RowDefinition Height="32"/>
                         </Grid.RowDefinitions>
 
-                        <Label Grid.Row="0" Content="Ключ:" FontSize="20"/>
+                        <Label Grid.Row="0" Content="Ключ:"/>
                         <TextBox x:Name="tbDecKey" Grid.Row="0" Margin="68, 0" Text="" VerticalAlignment="Center"/>
                         <TextBox x:Name="tbDec" Grid.Row="1" Text=""/>
                         <Button x:Name="btnDec" Grid.Row="2" Content="Расшифровать" Click="BtnDec_Click"/>
@@ -82,14 +82,14 @@
                             <ColumnDefinition Width="120"/>
                         </Grid.ColumnDefinitions>
 
-                        <Label Content="Текст:" FontSize="20"/>
+                        <Label Content="Текст:"/>
                         <Button x:Name="btnAnalyze" Content="Анализировать" HorizontalAlignment="Right" Click="BtnAnalyze_Click"/>
 
                         <TextBox x:Name="tbDecNoKey" Grid.Row="1" Grid.Column="0" Text=""/>
                         <StackPanel Grid.Row="2" Grid.Column="0" Margin="0">
-                            <Label Margin="0, 0, 28, 0" Content="Подбор букв:" FontSize="20"/>
+                            <Label Margin="0, 0, 28, 0" Content="Подбор букв:"/>
                             <TextBox x:Name="tbFrom" Text="" Width="40" VerticalAlignment="Center"/>
-                            <Label Content="-->" FontSize="20"/>
+                            <Label Content="-->"/>
                             <TextBox x:Name="tbTo" Text="" Width="40" VerticalAlignment="Center"/>
                             <Button x:Name="btnApply" Margin="20, 0" Content="Применить" Width="120" Click="BtnApply_Click"/>
                         </StackPanel>
@@ -105,9 +105,9 @@
                                 <ColumnDefinition/>
                             </Grid.ColumnDefinitions>
 
-                            <Label Grid.Row="0" Grid.Column="0" Content="История замен:" FontSize="20"/>
-                            <Label Grid.Row="1" Grid.Column="0" Content="Замен:" FontSize="20"/>
-                            <Label x:Name="lbCount" Grid.Row="1" Grid.Column="0" Margin="68, 0, 0, 0" Content="0" FontSize="20"/>
+                            <Label Grid.Row="0" Grid.Column="0" Content="История замен:"/>
+                            <Label Grid.Row="1" Grid.Column="0" Content="Замен:"/>
+                            <Label x:Name="lbCount" Grid.Row="1" Grid.Column="0" Margin="68, 0, 0, 0" Content="0"/>
 
                             <ListBox x:Name="lbChanges" Grid.RowSpan="2" Grid.Column="1" Background="{x:Null}"/>
                             <Button x:Name="btnCancelLast" Grid.Row="0" Grid.Column="3" Content="Отменить последнее"
@@ -116,7 +116,7 @@
                                     VerticalAlignment="Top" Width="180" Click="BtnCancelSelected_Click"/>
                         </Grid>
                         
-                        <Label Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" Content="Таблицы частот:" FontSize="20"/>
+                        <Label Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" Content="Таблицы частот:"/>
                         <ListBox x:Name="lbFreqStd" Margin="4" Grid.Row="1" Grid.RowSpan="3" Grid.Column="1" Opacity="0.6"/>
                         <ListBox x:Name="lbFreqText" Margin="4" Grid.Row="1" Grid.RowSpan="3" Grid.Column="2" Opacity="0.6"/>
                     </Grid>
