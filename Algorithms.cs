@@ -309,5 +309,89 @@ namespace CryptoCalc
             }
             return result;
         }
+
+        //Генерация многочлена (задача разделения секрета)
+        public static List<int> GenerateF(int n, int t, int k, int p, out Dictionary<int, int> subkeys)
+        {
+            Random r = new Random();
+            List<int> a = new List<int>();
+            for (int i = 0; i < t - 1; i++)
+                a.Add(r.Next(1, p));
+            a.Add(k);
+
+            subkeys = new Dictionary<int, int>();
+            for (int i = 0; i < n; i++)
+                subkeys.Add(i + 1, Algorithms.Horner(a, i + 1, p));
+
+            return a;
+        }
+
+        //Схема Горнера (задача разделения секрета)
+        private static int Horner(List<int> a, int x, int mod)
+        {
+            int res = a[0];
+            for (int i = 1; i < a.Count; i++)
+                res = (res * x + a[i]) % mod;
+            return res;
+        }
+
+        //Получение строки СЛАУ
+        private static List<int> GetRow(int x, int y, int t, int p)
+        {
+            List<int> res = new List<int>();
+            for (int i = t - 1; i > 0; i--)
+                res.Add((int)ModExp(x, i, p));
+            res.Add(1);
+            res.Add(y);
+            return res;
+        }
+
+        //Решение системы СЛАУ (нахождение k)
+        public static int Gaussian(Dictionary<int, int> subkeyes, int t, int p)
+        {
+            List<List<int>> a = new List<List<int>>();
+            foreach (KeyValuePair<int, int> pair in subkeyes)
+                a.Add(Algorithms.GetRow(pair.Key, pair.Value, t, p));
+
+            for (int i = 0; i < t; i++)
+            {
+                for (int j = i + 1; j < t; j++)
+                {
+                    List<int> tmp1 = new List<int>(a[i]), tmp2 = new List<int>(a[j]);
+                    for (int m = 0; m < tmp1.Count; m++)
+                    {
+                        tmp1[m] = tmp1[m] * a[j][i];
+                        tmp2[m] = (tmp1[m] - tmp2[m] * a[i][i]) % p;
+                        while (tmp2[m] < 0) tmp2[m] += p;
+                    }
+                    a[j] = new List<int>(tmp2);
+                }
+            }
+            int res = a[t - 1][t] * (int)Reverse_Pow(a[t - 1][t - 1], p);
+            while (res < 0) res += p;
+            while (res > p) res -= p;
+            return res;
+        }
+
+        //Использование многочлена Лагранжа
+        //p - модуль
+        public static int Lagrange(Dictionary<int, int> subkeyes, int p)
+        {
+            int res = 0;
+            foreach (KeyValuePair<int, int> pair in subkeyes)
+            {
+                int up = 1, down = 1;
+                foreach (KeyValuePair<int, int> pair_sec in subkeyes)
+                {
+                    if (pair.Key == pair_sec.Key) continue;
+                    up *= pair_sec.Key;
+                    down *= pair_sec.Key - pair.Key;
+                }
+                res += pair.Value * up * (int)Reverse_Pow(down, p);
+            }
+            res %= p;
+            while (res < 0) res += p;
+            return res;
+        }
     }
 }

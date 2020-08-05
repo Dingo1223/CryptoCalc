@@ -71,7 +71,7 @@
                         <TextBox x:Name="tbDec" Grid.Row="0" Text="" />
                         <Button x:Name="btnDec" Grid.Row="1" Content="Расшифровать" Click="BtnDec_Click"/>
 
-                        <ListBox x:Name="lbVariants" Grid.Column="1" Background="{x:Null}" Visibility="Hidden"/>
+                        <ListBox x:Name="lbVariants" Grid.Column="1" Visibility="Hidden"/>
                     </Grid>
                 </TabItem>
             </TabControl>

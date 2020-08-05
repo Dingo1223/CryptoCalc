@@ -32,8 +32,7 @@
                 <Button x:Name="btnEAG_Clean" Content="C" Width="40" HorizontalAlignment="Left" 
                         Click="BtnEAG_Clean_Click"/>
             </StackPanel>
-            <ListBox x:Name="lbEAG" Grid.Row="1" FontSize="20" 
-                     Background="{x:Null}" Foreground="White" BorderBrush="{x:Null}"/>
+            <ListBox x:Name="lbEAG" Grid.Row="1"/>
 
             <Label Grid.Row="2" Content="НОД ="/>
             <TextBox Grid.Row="2" x:Name="tbEAG_Res" Margin="100, 0, 0, 0" Text="" IsReadOnly="True" BorderBrush="{x:Null}"/>

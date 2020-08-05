@@ -25,7 +25,6 @@
             <StackPanel Orientation="Vertical">
                 <Button x:Name="btnSecret" Content="Задача разделения секрета" Click="BtnSecret_Click"/>
                 <Button x:Name="btnCRS" Content="Линейные рекуррентные последовательности" Click="BtnCRS_Click"/>
-                <Button x:Name="btnFS" Content="Протокол Фиата-Шамира" Click="BtnFS_Click"/>
             </StackPanel>
         </ScrollViewer>
     </Grid>

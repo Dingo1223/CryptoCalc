@@ -105,8 +105,8 @@
                         <ComboBox x:Name="cbxPosition" Grid.Row="1" Grid.Column="2" Opacity="0.5"
                                   FontSize="20" FontFamily="Bahnschrift Condenced" 
                                   SelectionChanged="CbxPosition_SelectionChanged"/>
-                        <ListBox x:Name="lbFreqStd" Margin="4" Grid.Row="2" Grid.RowSpan="4" Grid.Column="1" Opacity="0.6"/>
-                        <ListBox x:Name="lbFreqText" Margin="4" Grid.Row="2" Grid.RowSpan="4" Grid.Column="2" Opacity="0.6"
+                        <ListBox x:Name="lbFreqStd" Margin="4" Grid.Row="2" Grid.RowSpan="4" Grid.Column="1"/>
+                        <ListBox x:Name="lbFreqText" Margin="4" Grid.Row="2" Grid.RowSpan="4" Grid.Column="2"
                                  MouseDoubleClick="LbFreqText_MouseDoubleClick"/>
                     </Grid>
                 </TabItem>

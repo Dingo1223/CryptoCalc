@@ -45,8 +45,7 @@
                     Click="BtnGKO_Add_Click"/>
             <Button x:Name="btnGKO_Clear" Margin="132, 0, 0, 0" Grid.Row="1" Grid.Column="0" Content="Очистить" 
                     Click="BtnGKO_Clear_Click"/>
-            <ListBox x:Name="lbGKO" Margin="0, 0, 0, 40" Grid.Row="2" Grid.Column="0" FontSize="20" 
-                     Background="{x:Null}" Foreground="White" BorderBrush="{x:Null}"/>
+            <ListBox x:Name="lbGKO" Margin="0, 0, 0, 40" Grid.Row="2" Grid.Column="0"/>
 
             <Button x:Name="btnGKO_Solve" Grid.Row="1" Grid.Column="1" Content="Решить" 
                     Click="BtnGKO_Solve_Click"/>

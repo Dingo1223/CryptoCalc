@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using CryptoCalc.OtherFrames;
+using System.Windows;
 using System.Windows.Controls;
 
 namespace CryptoCalc.MenuFrames
@@ -12,17 +13,9 @@ namespace CryptoCalc.MenuFrames
 
         private void BtnToMainMenu_Click(object sender, RoutedEventArgs e) => MainWindow.MainFrame.Content = new MainMenuFrame();
 
-        private void BtnSecret_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
+        private void BtnSecret_Click(object sender, RoutedEventArgs e) => MainWindow.MainFrame.Content = new SecretFrame();
 
         private void BtnCRS_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void BtnFS_Click(object sender, RoutedEventArgs e)
         {
 
         }

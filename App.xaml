@@ -4,7 +4,7 @@
              xmlns:local="clr-namespace:CryptoCalc"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-        <!--Cipher TextBoxs-->
+        <!--small TextBoxs-->
         <Style x:Key="styleTbSmall" TargetType="TextBox">
             <Setter Property="FontFamily" Value="Bahnschrift Condenced"/>
             <Setter Property="FontSize" Value="20"/>
@@ -43,6 +43,15 @@
             </Setter>
         </Style>
 
+        <!--ListBoxs-->
+        <Style TargetType="ListBox">
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Background" Value="{x:Null}"/>
+            <Setter Property="BorderBrush" Value="{x:Null}"/>
+            <Setter Property="FontFamily" Value="Bahnschrift Condenced"/>
+            <Setter Property="FontSize" Value="20"/>
+        </Style>
+
         <!--GroupBoxs-->
         <Style TargetType="GroupBox">
             <Setter Property="Foreground" Value="White"/>
@@ -66,13 +75,12 @@
             <Setter Property="HorizontalAlignment" Value="Left"/>
             <Setter Property="VerticalAlignment" Value="Center"/>
         </Style>
-        
-        <!--Labels small-->
+
+        <!--small Labels-->
         <Style BasedOn="{StaticResource styleLb}" TargetType="Label">
             <Setter Property="FontSize" Value="20"/>
         </Style>
         
-
         <!--TextBoxs-->
         <Style TargetType="TextBox">
             <Setter Property="FontFamily" Value="Bahnschrift Condenced"/>
