@@ -14,8 +14,8 @@
     </Page.Resources>
 
     <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-        <Button x:Name="btnToBaseAlgs" Content="🡠 Назад" Opacity="0.4" Width="100" 
-                HorizontalAlignment="Left" VerticalAlignment="Top" Click="BtnToBaseAlgs_Click"/>
+        <Button x:Name="btnToBoolFuncs" Content="🡠 Назад" Opacity="0.4" Width="100" 
+                HorizontalAlignment="Left" VerticalAlignment="Top" Click="BtnToBoolFuncs_Click"/>
 
         <Grid Width="780" HorizontalAlignment="Center" VerticalAlignment="Center">
             <Grid.RowDefinitions>

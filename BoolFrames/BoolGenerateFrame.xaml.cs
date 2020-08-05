@@ -13,7 +13,7 @@ namespace CryptoCalc.BoolFrames
     {
         public BoolGenerateFrame() => InitializeComponent();
 
-        private void BtnToBaseAlgs_Click(object sender, RoutedEventArgs e) => MainWindow.MainFrame.Content = new BoolFuncsFrame();
+        private void BtnToBoolFuncs_Click(object sender, RoutedEventArgs e) => MainWindow.MainFrame.Content = new BoolFuncsFrame();
 
         private async void BtnGenerate_Click(object sender, RoutedEventArgs e)
         {
