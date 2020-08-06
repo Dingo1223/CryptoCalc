@@ -189,6 +189,9 @@
     <Compile Include="CiphersFrames\TransposFrame.xaml.cs">
       <DependentUpon>TransposFrame.xaml</DependentUpon>
     </Compile>
+    <Compile Include="OtherFrames\CRSFrame.xaml.cs">
+      <DependentUpon>CRSFrame.xaml</DependentUpon>
+    </Compile>
     <Compile Include="OtherFrames\SecretFrame.xaml.cs">
       <DependentUpon>SecretFrame.xaml</DependentUpon>
     </Compile>
@@ -215,6 +218,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="MenuFrames\OtherFrame.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="OtherFrames\CRSFrame.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -393,5 +393,58 @@ namespace CryptoCalc
             while (res < 0) res += p;
             return res;
         }
+
+        //Получение коэффициентов ЛРУ
+        private static List<int> Get_Coefs(List<int> coefs, int p)
+        {
+            for (int i = 1; i < coefs.Count; i++) coefs[i] *= -1;
+
+            int rev = (int)Reverse_RAE(coefs[0], p);
+            for (int i = 0; i < coefs.Count; i++)
+            {
+                coefs[i] *= rev;
+                while (coefs[i] < 0) coefs[i] += p;
+                while (coefs[i] >= p) coefs[i] -= p;
+            }
+
+            return coefs;
+        }
+
+        //Получение ЛРП
+        public static List<int> Get_LRP(List<int> LRP, List<int> coefs, int p, out int per)
+        {
+            coefs = Get_Coefs(coefs, p);
+
+            for (int i = 0; i < coefs.Count - 1; i++)
+            {
+                while (LRP[i] < 0) LRP[i] += p;
+                while (LRP[i] >= p) LRP[i] -= p;
+            }
+
+            bool flag = true;
+            while (flag)
+            {
+                int next = 0;
+                for (int i = 1; i < coefs.Count; i++)
+                    next += coefs[i] * LRP[LRP.Count - i];
+
+                while (next < 0) next += p;
+                while (next >= p) next -= p;
+                LRP.Add(next);
+
+                flag = false;
+                for (int i = 0; i < coefs.Count - 1; i++)
+                {
+                    if (LRP[LRP.Count - coefs.Count + 1 + i] != LRP[i])
+                    {
+                        flag = true;
+                        break;
+                    }
+                }
+            }
+
+            per = LRP.Count - coefs.Count + 1;
+            return LRP;
+        }
     }
 }
